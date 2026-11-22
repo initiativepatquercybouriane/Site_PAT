@@ -1,0 +1,4 @@
+---
+layout: base.njk
+---
+<div class="wrap"><article class="hero"><p class="m">{{ date | dateFr }}</p><h1>{{ title }}</h1>{% if image %}<img src="{{ image }}" alt="{{ image_alt or '' }}" style="max-width:100%">{% endif %}<div class="prose">{{ content | safe }}</div></article></div>

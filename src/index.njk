@@ -1,0 +1,14 @@
+---
+layout: base.njk
+title: Accueil
+---
+{% set next = collections.evenements | upcoming | first %}
+<div class="wrap"><div class="hero"><p class="m">Initiative citoyenne · Quercy Bouriane</p><h1>Cartographier notre autonomie alimentaire</h1>
+<p>Faire de l'autonomie alimentaire et de l'agriculture les piliers de notre résilience locale.</p>
+<a class="btn pri" href="/a-propos/">L'initiative</a> <a class="btn" href="/groupes/">Thèmes &amp; actions</a></div>
+<section class="s"><h2>Dernières nouvelles</h2><div class="g">
+{% for a in collections.actualites | head(2) %}<a class="c" href="{{ a.url }}"><p class="m">{{ a.date | dateFr }}</p><h3>{{ a.data.title }}</h3></a>{% endfor %}
+<a class="c" href="/actualites/"><p class="m">Archive</p><h3>Toutes les actualités →</h3></a></div></section></div>
+{% if next %}<section class="band" aria-label="Prochain événement"><div class="wrap"><div class="d"><b>{{ next.date | jour }}</b><span class="m">{{ next.date | moisAnnee }}</span></div>
+<div class="t"><p class="m k">Prochain rendez-vous{% if next.data.horaire %} · {{ next.data.horaire }}{% endif %}</p><h2>{{ next.data.title }}</h2><p style="margin:0">{{ next.data.lieu }}. {{ next.data.resume }}</p></div>
+<a class="btn pri" href="/agenda/">Voir l'agenda</a></div></section>{% endif %}

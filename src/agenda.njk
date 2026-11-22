@@ -1,0 +1,9 @@
+---
+layout: base.njk
+title: Agenda
+permalink: /agenda/
+---
+<div class="wrap"><div class="hero"><p class="m">Rendez-vous</p><h1>Agenda</h1></div><section class="s">
+{% for e in collections.evenements | upcoming %}<div class="c ev" style="background:#1D2B26;color:#EFEFE6"><div class="d"><b>{{ e.date | jour }}</b><span class="m">{{ e.date | moisAnnee }}</span></div><div><h2 style="color:#EFEFE6;font-size:2rem">{{ e.data.title }}</h2><p style="margin:0">{{ e.data.horaire }} · {{ e.data.lieu }}</p><p style="margin:.5em 0 0">{{ e.data.resume }}</p></div></div>{% else %}<p>Aucun événement à venir pour le moment.</p>{% endfor %}
+<h2>Événements passés</h2>
+{% for e in collections.evenements | past %}<div class="c ev"><div class="d"><b>{{ e.date | jour }}</b><span class="m">{{ e.date | moisAnnee }}</span></div><div><h3 style="margin:0">{{ e.data.title }}</h3><p style="margin:0">{{ e.data.lieu }}</p></div></div>{% endfor %}</section></div>

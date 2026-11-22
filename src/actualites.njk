@@ -1,0 +1,7 @@
+---
+layout: base.njk
+title: Actualités
+permalink: /actualites/
+---
+<div class="wrap"><div class="hero"><p class="m">Journal de bord</p><h1>Actualités</h1></div>
+<section class="s g">{% for a in collections.actualites %}<a class="c" href="{{ a.url }}">{% if a.data.image %}<img src="{{ a.data.image }}" alt="">{% endif %}<p class="m">{{ a.date | dateFr }}</p><h3>{{ a.data.title }}</h3></a>{% endfor %}</section></div>

@@ -1,0 +1,7 @@
+---
+layout: base.njk
+title: Groupes et thèmes
+permalink: /groupes/
+---
+<div class="wrap"><div class="hero"><p class="m">Travail en groupes</p><h1>Où mettre votre énergie et vos compétences ?</h1></div>
+<section class="s g">{% for g in collections.groupes %}<a class="c" href="/contact/#participer"><p class="m">Thème {{ loop.index }}</p><h3>{{ g.data.title }}</h3><p>{{ g.data.resume }}</p><span class="m">Rejoindre le groupe →</span></a>{% endfor %}</section></div>
